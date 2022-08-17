@@ -4,11 +4,32 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>helloServlet</servlet-name>
-        <servlet-class>com.rydzwr.secondtask.HelloServlet</servlet-class>
+        <servlet-name>helloWorld</servlet-name>
+        <servlet-class>com.rydzwr.secondtask.HelloWorld</servlet-class>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>helloServlet</servlet-name>
-        <url-pattern>/hello-servlet</url-pattern>  <!-- This is the URL of the servlet. -->
+        <servlet-name>helloWorld</servlet-name>
+        <url-pattern>/hello.world</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>ParamFilter</filter-name>
+        <filter-class>com.rydzwr.secondtask.ParamFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ParamFilter</filter-name>
+        <url-pattern>/hello.world</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FooFilter</filter-name>
+        <filter-class>com.rydzwr.secondtask.FooFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FooFilter</filter-name>
+        <url-pattern>/foo.world</url-pattern>
+    </filter-mapping>
 </web-app>
