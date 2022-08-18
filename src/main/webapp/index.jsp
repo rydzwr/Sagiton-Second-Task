@@ -1,9 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Second Task</title>
-</head>
 <style>
     html, body {
         width: 100%;
@@ -24,6 +20,7 @@
 <body>
 <div class="content">
     <a href="hello.world">Hello World</a>
+    <a href="hello.world?abc=foo">Hello World with param</a>
     <a href="foo.world">Foo World</a>
 </div>
 </body>
