@@ -10,16 +10,17 @@ import java.io.IOException;
 public class FooFilter implements Filter
 {
     @Override
-    public void init(FilterConfig filterConfig) {}
-
-    @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
     {
        // throw new RuntimeException("Exception has been thrown!");
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
-        resp.sendError(401, "Authentication failed");
+        try
+        {
+            resp.sendError(401, "Authentication failed");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
-
-    @Override
-    public void destroy() {}
 }
