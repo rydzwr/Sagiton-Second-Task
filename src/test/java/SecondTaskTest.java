@@ -18,7 +18,7 @@ public class SecondTaskTest
 {
     @Test
     @DisplayName("Check printed message")
-    public void testServlet() throws Exception
+    public void helloServletTest() throws Exception
     {
         //GIVEN
         HttpServletRequest request = mock(HttpServletRequest.class);
@@ -36,7 +36,7 @@ public class SecondTaskTest
 
     @Test
     @DisplayName("Check printed message with param value")
-    public void testServlet2() throws Exception
+    public void paramFilterTest() throws Exception
     {
         //GIVEN
         String foo = "Foo";
