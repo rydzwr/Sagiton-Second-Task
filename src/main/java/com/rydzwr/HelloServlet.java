@@ -1,10 +1,9 @@
-package com.rydzwr.secondtask;
+package com.rydzwr;
 
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "helloWorld", value = "/hello.world")
 public class HelloServlet extends HttpServlet

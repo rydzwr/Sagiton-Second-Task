@@ -1,4 +1,4 @@
-package com.rydzwr.secondtask;
+package com.rydzwr;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;

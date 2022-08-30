@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>helloWorld</servlet-name>
-        <servlet-class>com.rydzwr.secondtask.HelloServlet</servlet-class>
+        <servlet-class>com.rydzwr.HelloServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -15,7 +15,7 @@
 
     <filter>
         <filter-name>ParamFilter</filter-name>
-        <filter-class>com.rydzwr.secondtask.ParamFilter</filter-class>
+        <filter-class>com.rydzwr.ParamFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -25,7 +25,7 @@
 
     <filter>
         <filter-name>FooFilter</filter-name>
-        <filter-class>com.rydzwr.secondtask.FooFilter</filter-class>
+        <filter-class>com.rydzwr.FooFilter</filter-class>
     </filter>
 
     <filter-mapping>

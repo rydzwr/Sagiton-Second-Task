@@ -1,11 +1,10 @@
-package com.rydzwr.secondtask;
+package com.rydzwr;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Locale;
 
 @WebFilter(value = "/hello.world", filterName = "MyFilter")
 public class ParamFilter implements Filter
@@ -28,6 +27,5 @@ public class ParamFilter implements Filter
         {
             e.printStackTrace();
         }
-
     }
 }
