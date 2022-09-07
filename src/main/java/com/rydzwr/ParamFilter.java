@@ -6,26 +6,25 @@ import jakarta.servlet.annotation.WebFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter(value = "/hello.world", filterName = "MyFilter")
-public class ParamFilter implements Filter
-{
+public class ParamFilter implements Filter {
+
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
-    {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) {
         servletResponse.setContentType("text/html");
-        try
-        {
+        try {
             PrintWriter out = servletResponse.getWriter();
             String param = servletRequest.getParameter("abc");
-            String message = "Hello World!";
-            if (param != null)
-                out.println(param+ " " + message + " " + param);
-            else
+            if (param != null) {
+                out.write(param + " ");
                 filterChain.doFilter(servletRequest, servletResponse);
-        }
-        catch (IOException | ServletException e)
-        {
+                out.write(" " + param);
+            } else {
+                filterChain.doFilter(servletRequest, servletResponse);
+            }
+        } catch (IOException | ServletException e) {
             e.printStackTrace();
         }
     }
 }
+
+// TODO: What is context path

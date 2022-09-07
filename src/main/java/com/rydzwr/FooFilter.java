@@ -7,19 +7,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter(value = "/foo.world", filterName = "FooFilter")
-public class FooFilter implements Filter
-{
+public class FooFilter implements Filter {
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
-    {
-       // throw new RuntimeException("Exception has been thrown!");
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
-        try
-        {
-            resp.sendError(401, "Authentication failed");
-        }
-        catch (IOException e)
-        {
+        try {
+            resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Authentication failed");
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
